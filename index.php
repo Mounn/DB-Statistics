@@ -78,7 +78,9 @@ $row5 = $query5->fetch(PDO::FETCH_OBJ);
 <section class="container">
     <div class="row">
         <div class="col-sm-12 text-white">
-            <div class="table-responsive text-white">
+            <div class=" text-white">
+
+
                 <?php
                     try {
                         $r = $api->getSummonerByName("Jhazzzzzzzz");
@@ -87,84 +89,42 @@ $row5 = $query5->fetch(PDO::FETCH_OBJ);
                         echo "Error: " . $e->getMessage();
                     };
                 ?>
-                <?php
-                    echo e($rowtest->UserPassword);
-                    echo e($rowtest->Username);
+
+                <hr>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Gebruikersnaam</th>
+                        <th scope="col">Wachtwoord</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Rechten</th>
+                        <th scope="col">Mastertoken</th>
+                        <th scope="col">Gemaakt op</th>
+                        <th scope="col">Laatst ingelogd</th>
+                        <th scope="col">Laatst ingelogd IP</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><?= e($rowtest->Username); ?></td>
+                            <td><?= e($rowtest->UserPassword); ?></td>
+                            <td><?= e($rowtest->UserMail); ?></td>
+                            <td><?= e($rowtest->UserRights); ?></td>
+                            <td><?= e($rowtest->MasterToken); ?></td>
+                            <td><?= e($rowtest->CreatedAt); ?></td>
+                            <td><?= e($rowtest->LastLoginDate); ?></td>
+                            <td><?= e($rowtest->LastLoginIP); ?></td>
+                        </tr>
+                    </tbody>
 
 
-                ?>
-
+                </table>
             </div>
         </div>
 
     </div>
-
-
-
-
 </section>
-<!--
-<section class="container">
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <p class="display-4">Urenregistratie</p>
-                </div>
-                <div class="card-body">
-                    <p class="text-justify">
-                        Ga direct naar de Urenregistratie
-                    </p>
-                    <a href="/urenregistratie"><button class="btn btn-primary">Klik hier</button></a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <p class="display-4">Urenschema</p>
-                </div>
-                <div class="card-body">
-                    <p class="text-justify">
-                        Ga direct naar het urenschema
-                    </p>
-                    <a href="/alleuren"><button class="btn btn-primary">Klik hier</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="row pt-2">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <p class="display-4">Vragenlijst</p>
-                </div>
-                <div class="card-body">
-                    <p class="text-justify">
-                        Ga direct naar de vragenlijst
-                    </p>
-                    <a href="/vragen"><button class="btn btn-primary">Klik hier</button></a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <p class="display-4">Offertes inzien</p>
-                </div>
-                <div class="card-body">
-                    <p class="text-justify">
-                        Ga direct naar de offertes.
-                    </p>
-                    <a href="#"><button class="btn btn-primary">Klik hier</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
--->
 <section class="container">
 </section>
 <?php include 'assets/footer.php'; ?>
